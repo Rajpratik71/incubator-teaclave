@@ -143,7 +143,7 @@ target_compile_definitions(pycomponent PUBLIC SGX)
 if(NOT EXISTS "/usr/lib/pypy/include")
   message(
     FATAL_ERROR
-      "pypy development package not found\nFor Ubuntu, please run `apt-get install pypy-dev`"
+      "pypy development package not found\nFor Ubuntu, please run `apt-get --no-install-recommends install pypy-dev`"
   )
 endif()
 target_compile_options(pycomponent PUBLIC -UWITH_THREAD -O2 -fPIC -Wimplicit
